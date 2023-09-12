@@ -1,5 +1,7 @@
 using Scheduler_Simulator.Logica;
+using Scheduler_Simulator.Presentacion;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 /*
 * 
@@ -87,6 +89,8 @@ namespace Simulador_Scheduler
             if (processList.Count > 0 && processorList.Count > 0) {
                 scheduler = new(processorList, processList);
                 startMode();
+
+                populateItems();
             }
         }
 
@@ -151,6 +155,25 @@ namespace Simulador_Scheduler
             txtName.Enabled = false;
             txtPriority.Enabled = false;
             btnAddProcess.Enabled = false;
+        }
+
+        private void populateItems() 
+        {
+            ListProcessor[] listProcessors = new ListProcessor[processorList.Count];
+
+            Debug.WriteLine(processorList.Count);
+            
+            for (int i = 0; i < listProcessors.Length; i++) 
+            {
+                listProcessors[i] = new ListProcessor();
+                listProcessors[i].NucleusNumber = i.ToString();
+
+                if (flowLayoutPanel1.Controls.Count > 0) 
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                }
+                else flowLayoutPanel1.Controls.Add(listProcessors[i]);
+            }
         }
     }
 }

@@ -15,3 +15,5 @@ C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Ope
 C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Operativos\Simulacion-Scheduler\Simulador-Scheduler\obj\Debug\net6.0-windows\Scheduler-Simulator.pdb
 C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Operativos\Simulacion-Scheduler\Simulador-Scheduler\obj\Debug\net6.0-windows\Scheduler-Simulator.genruntimeconfig.cache
 C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Operativos\Simulacion-Scheduler\Simulador-Scheduler\obj\Debug\net6.0-windows\ref\Scheduler-Simulator.dll
+C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Operativos\Simulacion-Scheduler\Simulador-Scheduler\obj\Debug\net6.0-windows\Scheduler_Simulator.Presentacion.ListProcessor.resources
+C:\Users\NUBIA PARRA\OneDrive\Documentos\UNIVERSIDAD\Sexto Semestre\Sistemas Operativos\Simulacion-Scheduler\Simulador-Scheduler\obj\Debug\net6.0-windows\Scheduler_Simulator.Properties.Resources.resources

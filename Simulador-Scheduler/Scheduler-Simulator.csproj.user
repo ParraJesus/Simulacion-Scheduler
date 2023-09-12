@@ -4,5 +4,8 @@
     <Compile Update="Presentacion\GuiScheduler.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\ListProcessor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

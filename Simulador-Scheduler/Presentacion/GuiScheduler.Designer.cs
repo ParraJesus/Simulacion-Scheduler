@@ -43,9 +43,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -63,7 +65,7 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 479);
+            this.panel1.Size = new System.Drawing.Size(1126, 479);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -75,8 +77,12 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(920, 479);
-            this.splitContainer1.SplitterDistance = 374;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Size = new System.Drawing.Size(1126, 479);
+            this.splitContainer1.SplitterDistance = 381;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -102,7 +108,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.txtName);
             this.splitContainer2.Panel2.Controls.Add(this.label4);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
-            this.splitContainer2.Size = new System.Drawing.Size(374, 479);
+            this.splitContainer2.Size = new System.Drawing.Size(381, 479);
             this.splitContainer2.SplitterDistance = 81;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -162,7 +168,7 @@
             this.btnAddProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAddProcess.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddProcess.ForeColor = System.Drawing.Color.White;
-            this.btnAddProcess.Location = new System.Drawing.Point(6, 93);
+            this.btnAddProcess.Location = new System.Drawing.Point(9, 93);
             this.btnAddProcess.Name = "btnAddProcess";
             this.btnAddProcess.Size = new System.Drawing.Size(365, 33);
             this.btnAddProcess.TabIndex = 18;
@@ -256,18 +262,28 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Simulador de Scheduler";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(-5, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(746, 479);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // GuiScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(944, 532);
+            this.ClientSize = new System.Drawing.Size(1150, 532);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "GuiScheduler";
             this.Text = "Scheduler Simulator por Jesus Parra";
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -299,5 +315,6 @@
         private Button btnAddProcess;
         private Button btnStart;
         private Button btnConfirmProcessors;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
