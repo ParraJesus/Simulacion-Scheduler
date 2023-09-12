@@ -12,13 +12,12 @@ namespace Scheduler_Simulator.Presentacion
 {
     public partial class ListProcess : UserControl
     {
+        private string name;
+        private string state;
         public ListProcess()
         {
             InitializeComponent();
         }
-
-        private string name;
-        private string state;
 
         [Category("Custom Props")]
         public string Name
