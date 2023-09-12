@@ -155,6 +155,7 @@ namespace Simulador_Scheduler
             txtName.Enabled = false;
             txtPriority.Enabled = false;
             btnAddProcess.Enabled = false;
+            btnStart.Enabled = false;
         }
 
         private void populateItems() 
@@ -168,7 +169,7 @@ namespace Simulador_Scheduler
                 listProcessors[i] = new ListProcessor();
                 listProcessors[i].NucleusNumber = i.ToString();
 
-                if (flowLayoutPanel1.Controls.Count > 0) 
+                if (flowLayoutPanel1.Controls.Count < 0) 
                 {
                     flowLayoutPanel1.Controls.Clear();
                 }
