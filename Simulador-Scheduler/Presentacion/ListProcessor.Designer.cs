@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtTitle = new System.Windows.Forms.Label();
             this.lblNucleus = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -46,27 +49,6 @@
             this.panel1.Size = new System.Drawing.Size(160, 160);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(166, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 160);
-            this.panel2.TabIndex = 1;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTitle.ForeColor = System.Drawing.Color.White;
-            this.txtTitle.Location = new System.Drawing.Point(0, 0);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(160, 31);
-            this.txtTitle.TabIndex = 0;
-            this.txtTitle.Text = "Nucleo: ";
-            // 
             // lblNucleus
             // 
             this.lblNucleus.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,6 +61,49 @@
             this.lblNucleus.Text = "#";
             this.lblNucleus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // txtTitle
+            // 
+            this.txtTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTitle.ForeColor = System.Drawing.Color.White;
+            this.txtTitle.Location = new System.Drawing.Point(0, 0);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(160, 31);
+            this.txtTitle.TabIndex = 0;
+            this.txtTitle.Text = "Nucleo: ";
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.flowLayoutPanel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(166, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(534, 160);
+            this.panel2.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(534, 31);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Procesos:";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 31);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(534, 129);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // ListProcessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -89,6 +114,7 @@
             this.Name = "ListProcessor";
             this.Size = new System.Drawing.Size(700, 160);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -99,5 +125,7 @@
         private Panel panel2;
         private Label txtTitle;
         private Label lblNucleus;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
     }
 }

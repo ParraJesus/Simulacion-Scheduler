@@ -158,15 +158,13 @@ namespace Simulador_Scheduler
             btnStart.Enabled = false;
         }
 
-        private void populateItems() 
+        private void populateItems()
         {
             ListProcessor[] listProcessors = new ListProcessor[processorList.Count];
-
-            Debug.WriteLine(processorList.Count);
             
             for (int i = 0; i < listProcessors.Length; i++) 
             {
-                listProcessors[i] = new ListProcessor();
+                listProcessors[i] = new ListProcessor(processorList[i].Processes);
                 listProcessors[i].NucleusNumber = i.ToString();
 
                 if (flowLayoutPanel1.Controls.Count < 0) 
