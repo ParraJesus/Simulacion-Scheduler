@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler_Simulator.Logica
 {
-    internal class Process
+    public class RegProcess
     {
         #region Attributes
         public enum ProcessState
@@ -24,22 +24,20 @@ namespace Scheduler_Simulator.Logica
             Terminated      //Terminado
         }
 
-        private string name;
-        private int priority;
+        private string name = "";
+        private int priority = 1;
         private int waitTime = 0; //Tiempo de espera
         private int burstTime = 0; //Tiempo de ráfaga
-        private ProcessState state;
+        private ProcessState state = ProcessState.Waiting;
         #endregion
 
         #region Constructor
-        public Process(){}
+        public RegProcess(){}
 
-        public Process(string name, int priority, ProcessState state)
+        public RegProcess(string name, int priority)
         {
             this.name = name;
             this.priority = priority;
-            this.state = state;
-
         }
         #endregion
 

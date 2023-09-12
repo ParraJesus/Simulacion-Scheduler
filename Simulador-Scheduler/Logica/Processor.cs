@@ -4,39 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * 
+ * HECHO POR JESUS GABRIEL PARRA
+ * 
+ */
+
 namespace Scheduler_Simulator.Logica
 {
-    internal class Processor
+    public class Processor
     {
-        private List<Process> processes = new List<Process>();
+        private List<RegProcess> processes = new List<RegProcess>();
 
         public Processor(){}
 
-        public Processor(List<Process> processes)
+        public Processor(List<RegProcess> processes)
         {
             this.Processes = processes;
         }
 
         public void Process() 
         {
-            Process process = new Process();
+            RegProcess process = new RegProcess();
             for(int i = 0; i < processes.Count; i++) 
             {
                 process = processes[i];
 
                 switch (process.State) 
                 {
-                    case Logica.Process.ProcessState.Waiting:
-                        process.State = Logica.Process.ProcessState.Running;
+                    case Logica.RegProcess.ProcessState.Waiting:
+                        process.State = Logica.RegProcess.ProcessState.Running;
                         break;
 
-                    case Logica.Process.ProcessState.Blocked:
-                        process.State = Logica.Process.ProcessState.Running;
+                    case Logica.RegProcess.ProcessState.Blocked:
+                        process.State = Logica.RegProcess.ProcessState.Running;
                         break;
                 }
             }
+
+            
         }
 
-        public List<Process> Processes { get => processes; set => processes = value; }
+        public List<RegProcess> Processes { get => processes; set => processes = value; }
     }
 }
