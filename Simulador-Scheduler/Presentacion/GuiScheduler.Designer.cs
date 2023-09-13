@@ -143,19 +143,19 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 21);
+            this.label2.Size = new System.Drawing.Size(153, 21);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Cantidad de procesadores:";
+            this.label2.Text = "Cantidad de núcleos:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtProcessors
             // 
             this.txtProcessors.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtProcessors.ForeColor = System.Drawing.Color.White;
-            this.txtProcessors.Location = new System.Drawing.Point(202, 11);
+            this.txtProcessors.Location = new System.Drawing.Point(162, 11);
             this.txtProcessors.MaxLength = 1;
             this.txtProcessors.Name = "txtProcessors";
-            this.txtProcessors.Size = new System.Drawing.Size(169, 23);
+            this.txtProcessors.Size = new System.Drawing.Size(209, 23);
             this.txtProcessors.TabIndex = 11;
             this.txtProcessors.Text = "1";
             this.txtProcessors.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProcessors_KeyPress);

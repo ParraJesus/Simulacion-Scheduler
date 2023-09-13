@@ -47,7 +47,7 @@ namespace Scheduler_Simulator.Presentacion
         public string NucleusNumber
         {
             get { return nucleusNumber; }
-            set { nucleusNumber = value; lblNucleus.Text = value; }
+            set { nucleusNumber = value; lblNucleus.Text = value;}
         }
 
     }

@@ -52,7 +52,7 @@
             // lblNucleus
             // 
             this.lblNucleus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNucleus.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNucleus.Font = new System.Drawing.Font("Segoe UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNucleus.ForeColor = System.Drawing.Color.White;
             this.lblNucleus.Location = new System.Drawing.Point(0, 31);
             this.lblNucleus.Name = "lblNucleus";

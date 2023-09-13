@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,33 +17,40 @@ namespace Scheduler_Simulator.Logica
     {
         private List<RegProcess> processes = new List<RegProcess>();
 
-        public Processor(){}
+        public Processor(){ }
 
         public Processor(List<RegProcess> processes)
         {
             this.Processes = processes;
         }
 
-        public void Process() 
+        public void processingProcesses()
         {
-            RegProcess process = new RegProcess();
-            for(int i = 0; i < processes.Count; i++) 
+            Random random = new Random();
+
+            int numeroAleatorio = random.Next(1, 101);
+
+            Debug.WriteLine("Procesador: ");
+
+            foreach (RegProcess process in processes)
             {
-                process = processes[i];
+                double probabilidad = random.NextDouble();
 
-                switch (process.State) 
+                if (probabilidad < 0.90)
                 {
-                    case Logica.RegProcess.ProcessState.Waiting:
-                        process.State = Logica.RegProcess.ProcessState.Running;
-                        break;
-
-                    case Logica.RegProcess.ProcessState.Blocked:
-                        process.State = Logica.RegProcess.ProcessState.Running;
-                        break;
+                    process.State = RegProcess.ProcessState.Running;
                 }
-            }
+                else if (probabilidad < 0.97)
+                {
+                    process.State = RegProcess.ProcessState.Blocked;
+                }
+                else
+                {
+                    process.State = RegProcess.ProcessState.Terminated;
+                }
 
-            
+                Debug.WriteLine("Proceso: " + process.State.ToString());
+            }
         }
 
         public List<RegProcess> Processes { get => processes; set => processes = value; }

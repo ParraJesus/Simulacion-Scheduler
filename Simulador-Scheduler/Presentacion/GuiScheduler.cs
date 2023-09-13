@@ -100,6 +100,14 @@ namespace Simulador_Scheduler
 
                 if (rbManual.Checked) scheduler = new(processorList, processList, processesIndex);
 
+                int i = 0;
+                foreach(Processor processor in processorList) 
+                {
+                    processorList[i].processingProcesses();
+                    i++;
+                }
+                
+
                 populateItems();
                 startSimulationMode();
             }
