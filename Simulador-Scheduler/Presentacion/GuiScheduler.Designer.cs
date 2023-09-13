@@ -34,6 +34,11 @@
             this.btnConfirmProcessors = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProcessors = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.rbManual = new System.Windows.Forms.RadioButton();
+            this.rbAuto = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbNucleus = new System.Windows.Forms.ComboBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnAddProcess = new System.Windows.Forms.Button();
             this.dgvProcess = new System.Windows.Forms.DataGridView();
@@ -65,7 +70,7 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1126, 479);
+            this.panel1.Size = new System.Drawing.Size(1126, 570);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -81,7 +86,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1126, 479);
+            this.splitContainer1.Size = new System.Drawing.Size(1126, 570);
             this.splitContainer1.SplitterDistance = 381;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -100,6 +105,11 @@
             // 
             // splitContainer2.Panel2
             // 
+            this.splitContainer2.Panel2.Controls.Add(this.label6);
+            this.splitContainer2.Panel2.Controls.Add(this.rbManual);
+            this.splitContainer2.Panel2.Controls.Add(this.rbAuto);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
+            this.splitContainer2.Panel2.Controls.Add(this.cbNucleus);
             this.splitContainer2.Panel2.Controls.Add(this.btnStart);
             this.splitContainer2.Panel2.Controls.Add(this.btnAddProcess);
             this.splitContainer2.Panel2.Controls.Add(this.dgvProcess);
@@ -108,8 +118,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.txtName);
             this.splitContainer2.Panel2.Controls.Add(this.label4);
             this.splitContainer2.Panel2.Controls.Add(this.label3);
-            this.splitContainer2.Size = new System.Drawing.Size(381, 479);
-            this.splitContainer2.SplitterDistance = 81;
+            this.splitContainer2.Size = new System.Drawing.Size(381, 570);
+            this.splitContainer2.SplitterDistance = 95;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnConfirmProcessors
@@ -150,27 +160,91 @@
             this.txtProcessors.Text = "1";
             this.txtProcessors.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProcessors_KeyPress);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(6, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 21);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Núcleo:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rbManual
+            // 
+            this.rbManual.AutoSize = true;
+            this.rbManual.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbManual.ForeColor = System.Drawing.Color.White;
+            this.rbManual.Location = new System.Drawing.Point(294, 25);
+            this.rbManual.Name = "rbManual";
+            this.rbManual.Size = new System.Drawing.Size(80, 25);
+            this.rbManual.TabIndex = 24;
+            this.rbManual.TabStop = true;
+            this.rbManual.Text = "Manual";
+            this.rbManual.UseVisualStyleBackColor = true;
+            this.rbManual.CheckedChanged += new System.EventHandler(this.rbManual_CheckedChanged);
+            // 
+            // rbAuto
+            // 
+            this.rbAuto.AutoSize = true;
+            this.rbAuto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbAuto.ForeColor = System.Drawing.Color.White;
+            this.rbAuto.Location = new System.Drawing.Point(237, 25);
+            this.rbAuto.Name = "rbAuto";
+            this.rbAuto.Size = new System.Drawing.Size(61, 25);
+            this.rbAuto.TabIndex = 23;
+            this.rbAuto.TabStop = true;
+            this.rbAuto.Text = "Auto";
+            this.rbAuto.UseVisualStyleBackColor = true;
+            this.rbAuto.CheckedChanged += new System.EventHandler(this.rbAuto_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(6, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(225, 21);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Asignar los núcleos de manera:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbNucleus
+            // 
+            this.cbNucleus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.cbNucleus.ForeColor = System.Drawing.Color.White;
+            this.cbNucleus.FormattingEnabled = true;
+            this.cbNucleus.Location = new System.Drawing.Point(83, 117);
+            this.cbNucleus.Name = "cbNucleus";
+            this.cbNucleus.Size = new System.Drawing.Size(288, 23);
+            this.cbNucleus.TabIndex = 21;
+            // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(9, 345);
+            this.btnStart.Location = new System.Drawing.Point(13, 435);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(365, 33);
+            this.btnStart.Size = new System.Drawing.Size(361, 33);
             this.btnStart.TabIndex = 19;
             this.btnStart.Text = "Comenzar Simulación";
             this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.btnStart.Click += new System.EventHandler(this.btnStartSim_Click);
             // 
             // btnAddProcess
             // 
             this.btnAddProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnAddProcess.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddProcess.ForeColor = System.Drawing.Color.White;
-            this.btnAddProcess.Location = new System.Drawing.Point(9, 93);
+            this.btnAddProcess.Location = new System.Drawing.Point(13, 149);
             this.btnAddProcess.Name = "btnAddProcess";
-            this.btnAddProcess.Size = new System.Drawing.Size(365, 33);
+            this.btnAddProcess.Size = new System.Drawing.Size(361, 33);
             this.btnAddProcess.TabIndex = 18;
             this.btnAddProcess.Text = "Agregar Proceso";
             this.btnAddProcess.UseVisualStyleBackColor = false;
@@ -182,19 +256,18 @@
             this.dgvProcess.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dgvProcess.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProcess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProcess.Enabled = false;
             this.dgvProcess.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dgvProcess.Location = new System.Drawing.Point(0, 132);
+            this.dgvProcess.Location = new System.Drawing.Point(13, 188);
             this.dgvProcess.Name = "dgvProcess";
             this.dgvProcess.RowTemplate.Height = 25;
-            this.dgvProcess.Size = new System.Drawing.Size(374, 207);
+            this.dgvProcess.Size = new System.Drawing.Size(361, 241);
             this.dgvProcess.TabIndex = 17;
             // 
             // txtPriority
             // 
             this.txtPriority.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtPriority.ForeColor = System.Drawing.Color.White;
-            this.txtPriority.Location = new System.Drawing.Point(83, 64);
+            this.txtPriority.Location = new System.Drawing.Point(83, 88);
             this.txtPriority.MaxLength = 1;
             this.txtPriority.Name = "txtPriority";
             this.txtPriority.Size = new System.Drawing.Size(291, 23);
@@ -207,7 +280,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(6, 62);
+            this.label5.Location = new System.Drawing.Point(6, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 21);
             this.label5.TabIndex = 15;
@@ -218,7 +291,7 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtName.ForeColor = System.Drawing.Color.White;
-            this.txtName.Location = new System.Drawing.Point(83, 35);
+            this.txtName.Location = new System.Drawing.Point(83, 59);
             this.txtName.MaxLength = 10;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(291, 23);
@@ -230,7 +303,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(6, 33);
+            this.label4.Location = new System.Drawing.Point(6, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 21);
             this.label4.TabIndex = 13;
@@ -243,7 +316,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 12);
+            this.label3.Location = new System.Drawing.Point(6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 21);
             this.label3.TabIndex = 12;
@@ -258,7 +331,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(728, 479);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(728, 570);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -278,10 +351,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(1150, 532);
+            this.ClientSize = new System.Drawing.Size(1150, 623);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "GuiScheduler";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scheduler Simulator por Jesus Parra";
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -318,5 +392,10 @@
         private Button btnStart;
         private Button btnConfirmProcessors;
         private FlowLayoutPanel flowLayoutPanel1;
+        private ComboBox cbNucleus;
+        private RadioButton rbManual;
+        private RadioButton rbAuto;
+        private Label label7;
+        private Label label6;
     }
 }

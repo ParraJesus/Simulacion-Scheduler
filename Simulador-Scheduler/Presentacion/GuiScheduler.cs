@@ -16,11 +16,15 @@ namespace Simulador_Scheduler
         private List<Processor> processorList = new List<Processor>();
         private List<RegProcess> processList = new List<RegProcess>();
 
+        List<int> processesIndex = new List<int>();
+
         private Scheduler scheduler;
         public GuiScheduler()
         {
             InitializeComponent();
             inicializeDgvProcess();
+
+            startMode();
         }
 
         public void inicializeDgvProcess() 
@@ -68,6 +72,8 @@ namespace Simulador_Scheduler
                 Priority = int.Parse(txtPriority.Text.Trim())
             });
 
+            processesIndex.Add(int.Parse(cbNucleus.Text));   
+
             dgvProcess.DataSource = null;
             dgvProcess.DataSource = processList;
         }
@@ -80,17 +86,22 @@ namespace Simulador_Scheduler
             for (int i = 0; i < processorsNumber; i++)
             {
                 processorList.Add(new Processor());
+                cbNucleus.Items.Add(i.ToString());
             }
+            cbNucleus.SelectedIndex = 0;
             confirmProcessorsMode();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void btnStartSim_Click(object sender, EventArgs e)
         {
-            if (processList.Count > 0 && processorList.Count > 0) {
-                scheduler = new(processorList, processList);
-                startMode();
+            if (processList.Count > 0 && processorList.Count > 0)
+            {
+                if(rbAuto.Checked) scheduler = new(processorList, processList);
+
+                if (rbManual.Checked) scheduler = new(processorList, processList, processesIndex);
 
                 populateItems();
+                startSimulationMode();
             }
         }
 
@@ -140,24 +151,6 @@ namespace Simulador_Scheduler
             }
         }
 
-        private void confirmProcessorsMode()
-        {
-            if (processorList.Count > 0)
-            {
-                btnConfirmProcessors.Enabled = false;
-                txtProcessors.Enabled = false;
-            }
-        }
-        private void startMode()
-        {
-            btnConfirmProcessors.Enabled = false;
-            txtProcessors.Enabled = false;
-            txtName.Enabled = false;
-            txtPriority.Enabled = false;
-            btnAddProcess.Enabled = false;
-            btnStart.Enabled = false;
-        }
-
         private void populateItems()
         {
             ListProcessor[] listProcessors = new ListProcessor[processorList.Count];
@@ -173,6 +166,67 @@ namespace Simulador_Scheduler
                 }
                 else flowLayoutPanel1.Controls.Add(listProcessors[i]);
             }
+        }
+
+        private void confirmProcessorsMode()
+        {
+            if (processorList.Count > 0)
+            {
+                btnConfirmProcessors.Enabled = false;
+                txtProcessors.Enabled = false;
+
+                txtName.Enabled = true;
+                txtPriority.Enabled = true;
+                btnAddProcess.Enabled = true;
+                btnStart.Enabled = true;
+
+                rbAuto.Enabled = true;
+                rbAuto.Checked = true;
+
+                rbManual.Enabled = true;
+            }
+
+
+        }
+
+        private void startSimulationMode()
+        {
+            //btnStart.Enabled = false;
+            btnConfirmProcessors.Enabled = false;
+            txtProcessors.Enabled = false;
+            txtName.Enabled = false;
+            txtPriority.Enabled = false;
+            btnAddProcess.Enabled = false;
+
+            rbAuto.Enabled = false;
+            rbManual.Enabled = false;
+            cbNucleus.Enabled = false;
+        }
+
+        private void startMode()
+        {
+            btnConfirmProcessors.Enabled = true;
+            txtProcessors.Enabled = true;
+            txtName.Enabled = false;
+            txtPriority.Enabled = false;
+            btnAddProcess.Enabled = false;
+            btnStart.Enabled = false;
+
+            rbAuto.Enabled = false;
+            rbManual.Enabled = false;
+            cbNucleus.Enabled = false;
+        }
+
+        private void rbManual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbManual.Checked) cbNucleus.Enabled = true;
+            else cbNucleus.Enabled = false;
+        }
+
+        private void rbAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!rbAuto.Checked) cbNucleus.Enabled = true;
+            else cbNucleus.Enabled = false;
         }
     }
 }

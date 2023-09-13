@@ -15,27 +15,42 @@ namespace Scheduler_Simulator.Logica
 {
     public class Scheduler
     {
-        List<RegProcess> processes= new List<RegProcess>(); //Lista de procesos que se van a manejar
-        List<Processor> processors= new List<Processor>(); //Lista de procesadores con los que se van a trabajar
+        List<RegProcess> processes = new List<RegProcess>(); //Lista de procesos que se van a manejar
+        List<Processor> processors = new List<Processor>(); //Lista de procesadores con los que se van a trabajar
 
-        public Scheduler(List<Processor> processors, List<RegProcess> processes) 
+        List<int> processesIndex = new List<int>();
+
+        #region Constructors
+
+        //Constructor para cuando se quieren asignar los procesos de manera automática
+        public Scheduler(List<Processor> processors, List<RegProcess> processes)
         {
             this.processors = processors;
             this.processes = processes;
 
-            this.processes = orderbyPriority();
-            DistributeProcesses();
+            assignProcessesAutomatically();
         }
 
+        //Constructor para cuando se quieren asignar los procesos de manera manual
+        public Scheduler(List<Processor> processors, List<RegProcess> processes, List<int> processesIndex)
+        {
+            this.processors = processors;
+            this.processes = processes;
+            this.processesIndex = processesIndex;
+
+            assignProcessesManually();
+        } 
+        #endregion
+
         //Método para ordenar los procesos por prioridad
-        public List<RegProcess> orderbyPriority() 
+        public List<RegProcess> orderbyPriority()
         {
             List<RegProcess> sortedProcesses = processes.OrderByDescending(p => p.Priority).ToList();
             return sortedProcesses;
         }
 
         //Distribuir para cada procesador un número igual de procesos
-        public void DistributeProcesses()
+        public void assignProcessesAutomatically()
         {
             Debug.WriteLine("Total de procesadores: " + processors.Count);
             Debug.WriteLine("Total de procesos: " + processes.Count);
@@ -63,6 +78,30 @@ namespace Scheduler_Simulator.Logica
                 Debug.WriteLine("procesos del procesador: " + processor.Processes.Count);
             }
         }
+
+        //El usuario puede escoger a qué procesador va cada proceso
+        public void assignProcessesManually()
+        {
+            for (int i = 0; i < processes.Count; i++)
+            {
+                int index = processesIndex[i];
+
+                if (index >= 0 && index < processors.Count)
+                {
+                    if (processors[index].Processes == null)
+                    {
+                        processors[index].Processes = new List<RegProcess>();
+                    }
+
+                    processors[index].Processes.Add(processes[i]);
+                }
+                else
+                {
+                    Console.WriteLine("Error: El índice de procesador está fuera de rango para el proceso en la posición " + i);
+                }
+            }
+        }
+
 
         //Imprime todos los procesos dentro de un procesador
         public void showProcesses(int procesor) 
