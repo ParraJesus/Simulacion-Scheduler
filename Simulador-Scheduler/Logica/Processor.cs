@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using static System.Windows.Forms.AxHost;
 
 /*
  * 
@@ -17,39 +13,19 @@ namespace Scheduler_Simulator.Logica
     {
         private List<RegProcess> processes = new List<RegProcess>();
 
-        public Processor(){ }
-
-        public Processor(List<RegProcess> processes)
+        public Processor()
         {
-            this.Processes = processes;
+
         }
 
         public void processingProcesses()
         {
-            Random random = new Random();
-
-            int numeroAleatorio = random.Next(1, 101);
-
-            Debug.WriteLine("Procesador: ");
-
             foreach (RegProcess process in processes)
             {
-                double probabilidad = random.NextDouble();
+                process.State = RegProcess.ProcessState.Running;
 
-                if (probabilidad < 0.90)
-                {
-                    process.State = RegProcess.ProcessState.Running;
-                }
-                else if (probabilidad < 0.97)
-                {
-                    process.State = RegProcess.ProcessState.Blocked;
-                }
-                else
-                {
-                    process.State = RegProcess.ProcessState.Terminated;
-                }
+                //process.WaitTime = (float)stopwatch.Elapsed.TotalSeconds;
 
-                Debug.WriteLine("Proceso: " + process.State.ToString());
             }
         }
 

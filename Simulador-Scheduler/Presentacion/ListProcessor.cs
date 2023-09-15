@@ -32,8 +32,10 @@ namespace Scheduler_Simulator.Presentacion
             for (int i = 0; i < listProcess.Length; i++)
             {
                 listProcess[i] = new ListProcess();
-                listProcess[i].Name = processes[i].Name;
+                listProcess[i].ProcessName = processes[i].Name;
                 listProcess[i].State = processes[i].State.ToString();
+                listProcess[i].WaitTime = processes[i].WaitTime.ToString();
+                listProcess[i].BurstTime = processes[i].BurstTime.ToString();
 
                 if (flowLayoutPanel1.Controls.Count < 0)
                 {

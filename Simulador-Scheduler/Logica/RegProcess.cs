@@ -26,8 +26,8 @@ namespace Scheduler_Simulator.Logica
 
         private string name = "";
         private int priority = 1;
-        private int waitTime = 0; //Tiempo de espera
-        private int burstTime = 0; //Tiempo de ráfaga
+        private float waitTime = 0; //Tiempo de espera
+        private float burstTime = 0; //Tiempo de ráfaga
         private ProcessState state = ProcessState.Waiting;
         #endregion
 
@@ -44,8 +44,8 @@ namespace Scheduler_Simulator.Logica
         #region GetSet
         public string Name { get => name; set => name = value; }
         public int Priority { get => priority; set => priority = value; }
-        public int WaitTime { get => waitTime; set => waitTime = value; }
-        public int BurstTime { get => burstTime; set => burstTime = value; }
+        public float WaitTime { get => waitTime; set => waitTime = value; }
+        public float BurstTime { get => burstTime; set => burstTime = value; }
         public ProcessState State { get => state; set => state = value; }
         #endregion
 
