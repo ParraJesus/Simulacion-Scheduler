@@ -4,6 +4,7 @@ using System.Diagnostics;
 /*
  * 
  * HECHO POR JESUS GABRIEL PARRA
+ * Laboratorio de sistemas operativos
  * 
  */
 

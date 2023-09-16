@@ -1,7 +1,6 @@
 using Scheduler_Simulator.Logica;
 using Scheduler_Simulator.Presentacion;
-using System.Diagnostics;
-using System.Windows.Forms;
+using System.Threading;
 
 /*
 * 
@@ -92,6 +91,7 @@ namespace Simulador_Scheduler
             confirmProcessorsMode();
         }
 
+        
         private void btnStartSim_Click(object sender, EventArgs e)
         {
             if (processList.Count > 0 && processorList.Count > 0)
@@ -100,16 +100,47 @@ namespace Simulador_Scheduler
 
                 if (rbManual.Checked) scheduler = new(processorList, processList, processesIndex);
 
-                int i = 0;
                 foreach(Processor processor in processorList) 
                 {
-                    processorList[i].processingProcesses();
-                    i++;
+                    processor.processingProcesses();
                 }
                 populateItems();
                 startSimulationMode();
             }
         }
+        
+        /*
+        private void btnStartSim_Click(object sender, EventArgs e)
+        {
+            if (processList.Count > 0 && processorList.Count > 0)
+            {
+                if (rbAuto.Checked) scheduler = new Scheduler(processorList, processList);
+                if (rbManual.Checked) scheduler = new Scheduler(processorList, processList, processesIndex);
+
+                List<Thread> threads = new List<Thread>();
+
+                foreach (Processor processor in processorList)
+                {
+                    Thread thread = new Thread(() =>
+                    {
+                        processor.processingProcesses();
+                    });
+
+                    threads.Add(thread);
+                    thread.Start();
+                }
+
+                // Esperar a que todos los hilos terminen antes de continuar
+                foreach (Thread thread in threads)
+                {
+                    thread.Join();
+                }
+
+                populateItems();
+                startSimulationMode();
+            }
+        }
+        */
 
         private void txtPriority_KeyPress(object sender, KeyPressEventArgs e)
         {

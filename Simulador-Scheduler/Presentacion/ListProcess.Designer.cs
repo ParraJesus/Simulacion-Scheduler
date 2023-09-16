@@ -93,7 +93,6 @@
             this.pbState.Location = new System.Drawing.Point(206, 34);
             this.pbState.Name = "pbState";
             this.pbState.Size = new System.Drawing.Size(281, 23);
-            this.pbState.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbState.TabIndex = 4;
             // 
             // timer1

@@ -16,6 +16,8 @@ namespace Scheduler_Simulator.Logica
     public class RegProcess
     {
         #region Attributes
+
+        //Atributos propios del proceso
         public enum ProcessState
         {
             Waiting,        //Esperando

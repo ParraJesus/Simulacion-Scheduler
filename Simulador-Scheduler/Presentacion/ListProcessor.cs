@@ -1,23 +1,24 @@
 ﻿using Scheduler_Simulator.Logica;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
+/*
+ * 
+ * HECHO POR JESUS GABRIEL PARRA
+ * 
+ */
 
 namespace Scheduler_Simulator.Presentacion
 {
     public partial class ListProcessor : UserControl
     {
+        #region Attributes
         private List<RegProcess> processes;
         private string nucleusNumber;
         ListProcess[] listProcess;
-        private Processor processor;
+        private Processor processor; 
+        #endregion
+
+        #region Constructors
         public ListProcessor(List<RegProcess> processes)
         {
             InitializeComponent();
@@ -35,7 +36,8 @@ namespace Scheduler_Simulator.Presentacion
             this.processor = processor;
 
             populateItems();
-        }
+        } 
+        #endregion
 
         private void populateItems()
         {

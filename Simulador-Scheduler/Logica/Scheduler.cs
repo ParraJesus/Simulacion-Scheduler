@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 /*
  * 
@@ -15,10 +10,13 @@ namespace Scheduler_Simulator.Logica
 {
     public class Scheduler
     {
+
+        #region Attributes
         List<RegProcess> processes = new List<RegProcess>(); //Lista de procesos que se van a manejar
         List<Processor> processors = new List<Processor>(); //Lista de procesadores con los que se van a trabajar
 
-        List<int> processesIndex = new List<int>();
+        List<int> processesIndex = new List<int>(); //Lista de índices que relacionan los procesadores con los procesos 
+        #endregion
 
         #region Constructors
 
@@ -101,7 +99,6 @@ namespace Scheduler_Simulator.Logica
                 }
             }
         }
-
 
         //Imprime todos los procesos dentro de un procesador
         public void showProcesses(int procesor) 

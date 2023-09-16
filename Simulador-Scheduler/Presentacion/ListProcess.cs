@@ -1,24 +1,22 @@
-﻿using Scheduler_Simulator.Logica;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using System.ComponentModel;
+
+/*
+ * 
+ * HECHO POR JESUS GABRIEL PARRA
+ * 
+ */
 
 namespace Scheduler_Simulator.Presentacion
 {
     public partial class ListProcess : UserControl
     {
+
+        #region Attributes
         private string name = "";
         private string state = "";
         private string waitTime;
-        private string burstTime;
+        private string burstTime; 
+        #endregion
 
         public ListProcess()
         {
