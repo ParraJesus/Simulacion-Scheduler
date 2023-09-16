@@ -16,6 +16,8 @@ namespace Scheduler_Simulator.Presentacion
     {
         private List<RegProcess> processes;
         private string nucleusNumber;
+        ListProcess[] listProcess;
+        private Processor processor;
         public ListProcessor(List<RegProcess> processes)
         {
             InitializeComponent();
@@ -25,9 +27,19 @@ namespace Scheduler_Simulator.Presentacion
             populateItems();
         }
 
+        public ListProcessor(List<RegProcess> processes, Processor processor)
+        {
+            InitializeComponent();
+
+            this.processes = processes;
+            this.processor = processor;
+
+            populateItems();
+        }
+
         private void populateItems()
         {
-            ListProcess[] listProcess = new ListProcess[processes.Count];
+            listProcess = new ListProcess[processes.Count];
 
             for (int i = 0; i < listProcess.Length; i++)
             {
@@ -42,15 +54,21 @@ namespace Scheduler_Simulator.Presentacion
                     flowLayoutPanel1.Controls.Clear();
                 }
                 else flowLayoutPanel1.Controls.Add(listProcess[i]);
+
+                processor.ListProcesses = listProcess.ToList();
+
+                
             }
         }
 
+        #region CustomProps
         [Category("Custom Props")]
         public string NucleusNumber
         {
             get { return nucleusNumber; }
-            set { nucleusNumber = value; lblNucleus.Text = value;}
-        }
+            set { nucleusNumber = value; lblNucleus.Text = value; }
+        } 
+        #endregion
 
     }
 }

@@ -46,7 +46,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(160, 160);
+            this.panel1.Size = new System.Drawing.Size(160, 320);
             this.panel1.TabIndex = 0;
             // 
             // lblNucleus
@@ -56,7 +56,7 @@
             this.lblNucleus.ForeColor = System.Drawing.Color.White;
             this.lblNucleus.Location = new System.Drawing.Point(0, 31);
             this.lblNucleus.Name = "lblNucleus";
-            this.lblNucleus.Size = new System.Drawing.Size(160, 129);
+            this.lblNucleus.Size = new System.Drawing.Size(160, 289);
             this.lblNucleus.TabIndex = 1;
             this.lblNucleus.Text = "#";
             this.lblNucleus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -81,7 +81,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(166, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 160);
+            this.panel2.Size = new System.Drawing.Size(534, 320);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -101,7 +101,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 31);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(534, 129);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(534, 289);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // ListProcessor
@@ -112,7 +112,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ListProcessor";
-            this.Size = new System.Drawing.Size(700, 160);
+            this.Size = new System.Drawing.Size(700, 320);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

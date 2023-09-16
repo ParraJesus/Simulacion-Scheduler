@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Scheduler_Simulator.Logica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,6 @@ namespace Scheduler_Simulator.Presentacion
         private string state = "";
         private string waitTime;
         private string burstTime;
-
 
         public ListProcess()
         {
@@ -53,6 +53,18 @@ namespace Scheduler_Simulator.Presentacion
             get { return waitTime; }
             set { burstTime = value; lblBurstTime.Text = value; }
         }
+
+        [Category("Custom Props")]
+        public int ProgressBarValue
+        {
+            get { return pbState.Value; }
+            set { pbState.Value = value; }
+        }
         #endregion
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -106,8 +106,6 @@ namespace Simulador_Scheduler
                     processorList[i].processingProcesses();
                     i++;
                 }
-                
-
                 populateItems();
                 startSimulationMode();
             }
@@ -162,13 +160,13 @@ namespace Simulador_Scheduler
         private void populateItems()
         {
             ListProcessor[] listProcessors = new ListProcessor[processorList.Count];
-            
-            for (int i = 0; i < listProcessors.Length; i++) 
+
+            for (int i = 0; i < listProcessors.Length; i++)
             {
-                listProcessors[i] = new ListProcessor(processorList[i].Processes);
+                listProcessors[i] = new ListProcessor(processorList[i].Processes, processorList[i]);
                 listProcessors[i].NucleusNumber = i.ToString();
 
-                if (flowLayoutPanel1.Controls.Count < 0) 
+                if (flowLayoutPanel1.Controls.Count < 0)
                 {
                     flowLayoutPanel1.Controls.Clear();
                 }
